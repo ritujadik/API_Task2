@@ -6,9 +6,11 @@ filterdata = []
 fetch("https://dummyjson.com/products") 
 .then((data) => data.json())
 .then((data) =>{
-    new_data = data;
-    filterdata = data;
-    renderListUI();
+    new_data = JSON.stringify(data,null,2);
+    filterdata = new_data;
+    outputElem.textContent = new_data;
+    
+    /*renderListUI();*/
     
 })
 .catch (error =>{
@@ -48,3 +50,8 @@ function renderListUI() {
     outputElem.innerHTML = "";
     outputElem.appendChild(productfragment);
 }
+
+searchElem.addEventListener("input",livesearch()) {
+    const new_searchElem =
+}
+
